@@ -1,0 +1,79 @@
+.container {
+  margin: 2vw 0vw;
+}
+.textAreaContainer {
+  display: flex;
+  padding: 2vw 0vw;
+  margin-left: 5%;
+}
+.textAreaContainer img {
+  width: 90%;
+}
+.title {
+  color: #156060;
+  /* font-size: 1.63vw; */
+  font-size: 2.4rem;
+  font-family: Istok Web;
+  font-weight: 700;
+  text-decoration: underline;
+  text-transform: capitalize;
+  word-wrap: break-word;
+}
+textarea {
+  outline: none;
+  border: none;
+  border: 2px solid #b6b6b6;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  padding: 1vw;
+  color: #757575;
+  font-size: 15px;
+  font-family: Inter;
+  font-weight: 500;
+  word-wrap: break-word;
+  resize: none;
+}
+.container h5 {
+  margin: 0;
+  color: #868686;
+  font-size: 1.8rem;
+  font-family: Istok Web;
+  font-weight: 700;
+  text-decoration: underline;
+  text-transform: capitalize;
+  word-wrap: break-word;
+  margin-left: 5%;
+}
+textarea::placeholder {
+  color: #757575;
+}
+.container textarea {
+  width: 60%;
+}
+.submitButton {
+  width: 20%;
+  background-color: #178c8c;
+  color: white;
+  outline: none;
+  border: none;
+}
+@media (max-width: 500px) {
+  .container textarea {
+    width: 90%;
+  }
+  .textAreaContainer {
+    margin-left: 0;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 6vw;
+  }
+  .textAreaContainer img {
+    width: 70%;
+    padding: 2.5vw 0vw;
+  }
+  .submitButton {
+    width: 60%;
+    border-radius: 0.5rem;
+  }
+}

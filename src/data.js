@@ -1,0 +1,102 @@
+import img1 from "./assets/thumbnail1.svg";
+import img2 from "./assets/pic2.svg";
+import img3 from "./assets/pic3.svg";
+import cloud from "./assets/cloud.svg";
+import khan from "./assets/khan.svg";
+import certificationImage1 from "./assets/certification1.svg";
+import certificationImage2 from "./assets/certification2.svg";
+import certificationImage3 from "./assets/certification3.svg";
+const coursesData = [
+  {
+    id: "course-1",
+    image: img1,
+    creator: "Reena Jacobs",
+    title: "Unconcious bias",
+    duration: "25 mins",
+    uploadDate: "12/04/23",
+    language: "English",
+    stars: 4,
+    rating: "43,230",
+    free: true,
+    lessons: 6,
+    logo: khan,
+  },
+  {
+    id: "course-2",
+    image: img2,
+    creator: "Dan Williams",
+    tag: "Popular",
+    stars: 5,
+    title: "Communication",
+    duration: "Duration : 50mins",
+    price: "15.90",
+    free: false,
+    lessons: 4,
+    uploadDate: "11/6/22",
+    language: "English",
+    // priceDescription="*Free"
+    logo: cloud,
+    rating: "30,435",
+    // type="Enroll"
+  },
+  {
+    id: "course-3",
+    image: img3,
+    creator: "Malik Muzammil",
+    title: "Critical thinking",
+    duration: "Duration : 1hour 12mins",
+    uploadDate: "06/11/22",
+    language: "English",
+    stars: 4,
+    rating: "28,435",
+    free: false,
+    lessons: 9,
+    price: "10.90",
+    logo: khan,
+  },
+  {
+    id: "course-4",
+    image: certificationImage1,
+    creator: "Rishi Jha",
+    title: "Team Work",
+    duration: "25 mins",
+    uploadDate: "02/07/23",
+    language: "Hindi",
+    stars: 4,
+    rating: "24,100",
+    free: false,
+    lessons: 7,
+    logo: cloud,
+    price: "19.90",
+  },
+  {
+    id: "course-5",
+    image: certificationImage2,
+    creator: "Adnan Athania",
+    title: "Leadership Skills",
+    duration: "Duration : 50mins",
+    uploadDate: "21/01/22",
+    language: "English",
+    stars: 5,
+    price: "18.90",
+    rating: "28,435",
+    free: false,
+    lessons: 6,
+    logo: khan,
+  },
+  {
+    id: "course-6",
+    image: certificationImage3,
+    creator: "Jonas Miller",
+    title: "Statistics",
+    duration: "1hour 12mins",
+    uploadDate: "27/02/22",
+    language: "English",
+    stars: 5,
+    rating: "12,434",
+    free: false,
+    lessons: 10,
+    logo: khan,
+  },
+];
+export default coursesData;

@@ -1,0 +1,172 @@
+main {
+  width: 25%;
+}
+.container {
+  /* Each card only takes up 20% of the total width of 80% parent container */
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+.container:hover {
+  transform: scale(110%);
+  transition: all ease-in 0.3s;
+}
+.container img:first-child {
+  width: 100%;
+}
+.innerContainer {
+  padding: 1vw;
+}
+.container p:first-child {
+  font-family: Istok Web;
+  font-size: 1.5vw;
+  font-weight: 700;
+  line-height: 1.5vw;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #0a4a4a;
+  margin-top: 0.7vw;
+}
+h3 {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  font-family: Inter;
+  /* background-color: red; */
+  background-color: #cc0000;
+  padding: 0.5vw 1.2vw;
+  /* font-size: 0.9vw; */
+  font-size: 0.9vw;
+}
+h2 {
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter;
+  color: #178c8c;
+  padding-top: 2vw;
+  padding-bottom: 0.5vw;
+  margin: 0 auto;
+}
+h2:hover {
+  border-bottom: 2px solid #178c8c;
+}
+.container p:nth-child(2) {
+  font-family: Istok Web;
+  font-size: 1vw;
+  font-weight: 700;
+  line-height: 1.5vw;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-top: 0.5vw;
+}
+.container p:nth-child(3) {
+  font-family: Istok Web;
+  font-size: 1.1vw;
+  font-weight: 700;
+  line-height: 1.5vw;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #868686;
+  margin-top: 0.5vw;
+
+  /* text-decoration: line-through; */
+}
+.container p:nth-child(3) span {
+  color: red;
+}
+.logo {
+  width: 40%;
+  margin-top: 0.5vw;
+}
+.checked {
+  color: yellow;
+}
+.rating {
+  /* font-size: 1.5vw; */
+  display: flex;
+  margin-top: 0.5vw;
+}
+.rating p {
+  color: #868686;
+  font-size: 0.9vw;
+  font-style: italic;
+}
+.container button {
+  cursor: pointer;
+  text-align: center;
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+  font-family: Istok Web;
+  font-size: 1.2vw;
+  font-weight: 700;
+  letter-spacing: 0em;
+  color: #178c8c;
+  background-color: white;
+  border: 1px solid #178c8c;
+  padding: 0.5vw 0vw;
+  border-radius: 0.4vw;
+  margin-top: 2vw;
+}
+@media (max-width: 768px) {
+  main {
+    width: 30%;
+  }
+}
+
+@media (max-width: 500px) {
+  /* Multiplying all fontsizes by 3 */
+  main {
+    width: 85%;
+    margin: 0 auto;
+    padding: 10vw 0vw;
+  }
+  .innerContainer {
+    padding: 3.5vw;
+    /* text-align: center; */
+  }
+  .container p:first-child {
+    font-size: 6vw;
+    margin-top: 4vw;
+  }
+  h3 {
+    font-size: 4vw;
+    padding: 1.5vw 6vw;
+  }
+  h2 {
+    padding-top: 6vw;
+    padding-bottom: 1.5vw;
+    font-size: 4.5vw;
+  }
+  .container p:nth-child(2) {
+    font-size: 4vw;
+    margin-top: 7vw;
+  }
+  .container p:nth-child(3) {
+    font-size: 4vw;
+    margin-top: 7vw;
+  }
+  .logo {
+    margin-top: 6vw;
+    width: 50%;
+  }
+  .rating {
+    margin-top: 6vw;
+  }
+  .rating p {
+    font-size: 4vw;
+  }
+  .container button {
+    font-size: 5vw;
+    padding: 3vw 0vw;
+    margin-top: 6vw;
+    margin-bottom: 3vw;
+    border-radius: 1.2vw;
+  }
+  .container:hover {
+    transform: scale(100%);
+    transition: all ease-in 0.1s;
+  }
+}

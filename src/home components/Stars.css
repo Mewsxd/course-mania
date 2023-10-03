@@ -1,0 +1,15 @@
+.stars {
+  font-size: 1.3vw;
+  margin-right: 0.5vw;
+  color: gold;
+}
+@media (max-width: 768px) {
+  .stars {
+    font-size: 2vw;
+  }
+}
+@media (max-width: 500px) {
+  .stars {
+    font-size: 5vw;
+  }
+}

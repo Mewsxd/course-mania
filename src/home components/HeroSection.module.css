@@ -1,0 +1,119 @@
+.container {
+  height: 38vw;
+  display: inline-block;
+  background-image: url("../assets/back_upscaled.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  margin-top: 10rem;
+}
+.info {
+  /* margin-top: 3rem; */
+  margin-top: 1.5vw;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* gap: 2.5rem; */
+  gap: 1.5vw;
+}
+.info p {
+  width: 40%;
+  color: #007e7e;
+  font-size: 2vw;
+  font-family: Inter;
+  font-weight: 700;
+  text-transform: capitalize;
+  word-wrap: break-word;
+}
+.info button {
+  cursor: pointer;
+  /* // Visit Courses */
+  border: none;
+  outline: none;
+  border-radius: 0.5vw;
+  padding: 1vw 2vw;
+  background-color: #0e8585;
+  color: white;
+  /* font-size: 2rem; */
+  font-size: 1.35vw;
+  font-family: Inter;
+  font-weight: 700;
+  text-transform: capitalize;
+  word-wrap: break-word;
+}
+.container input {
+  z-index: 50;
+  border: 2px solid #45cfcf;
+  outline: none;
+  /* position: absolute; */
+  /* z-index: 50; */
+  width: 55%;
+  /* color: black; */
+  color: rgba(44, 117, 117, 0.5);
+  border-radius: 1.5rem;
+  font-size: 2.6rem;
+  font-family: Inter;
+  font-weight: 700;
+  padding: 1.2rem 0rem;
+  padding-left: 4rem;
+  padding-right: 5.6rem;
+  text-transform: lowercase;
+  word-wrap: break-word;
+  /* left: 50%;
+  top: 10%;
+  transform: translate(-50%, -50%); */
+}
+::placeholder {
+  color: rgba(44, 117, 117, 0.5);
+  opacity: 1; /* Firefox */
+  text-transform: capitalize;
+}
+
+@media (max-width: 768px) {
+  /* .container {
+    height: 50vw;
+  } */
+  .info {
+    margin-top: 3vw;
+  }
+  .info p {
+    /* margin: 0; */
+    width: 40%;
+    /* text-align: center; */
+    font-size: 2.5vw;
+  }
+  .info button {
+    /* padding: 1.5rem 3rem; */
+    padding: 2vw 4vw;
+    border-radius: 1vw;
+    font-size: 2.5vw;
+  }
+}
+
+@media (max-width: 500px) {
+  .info {
+    margin-top: 6vw;
+  }
+  .container input {
+    margin: 5vw 0vw;
+  }
+  .container {
+    background-image: none;
+    height: 80vw;
+    padding-bottom: 7vw;
+  }
+  .info p {
+    width: 80%;
+    font-size: 5vw;
+    text-align: center;
+    margin-top: 4vw;
+    margin-bottom: 12vw;
+  }
+  .info button {
+    padding: 4vw 6vw;
+    font-size: 4.5vw;
+  }
+}
