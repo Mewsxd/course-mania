@@ -47,14 +47,14 @@ nav {
   justify-content: center;
   align-items: center;
 }
-.middle ul {
-  cursor: pointer;
+nav ul {
   list-style: none;
   display: flex;
   gap: 4vw;
   padding: 0;
 }
 ul li {
+  cursor: pointer;
   color: #444444;
   font-size: 1.5vw;
 }
@@ -63,6 +63,7 @@ ul li {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  /* gap: 2vw; */
 }
 .right p {
   color: #2c7575;
@@ -103,7 +104,26 @@ ul li {
   color: #2c7575;
   cursor: pointer;
 }
-
+ul a {
+  text-decoration: none;
+}
+ul a:hover,
+ul a:active,
+ul a.active {
+  border-bottom: 4px solid #178c8c;
+}
+.responsiveNavbarContainer ul {
+  /* color: lightgreen;
+  font-size: 4rem; */
+  list-style: none;
+  padding-left: 1rem;
+  font-family: Inter;
+  font-weight: 600;
+}
+.responsiveNavbarContainer li {
+  font-size: 5.25vw;
+  margin: 3.75vw 0vw;
+}
 @media (max-width: 768px) {
   /* DOUBLE THE VW SIZES OF ALL ELEMENTS */
   .hamburgerIcon {
@@ -142,10 +162,10 @@ ul li {
   /* DOUBLE THE VW SIZES OF ALL ELEMENTS */
   nav {
     justify-content: space-between;
-    padding-top: 4vw;
+    padding-top: 2vw 4vw;
   }
   .outerContainer {
-    padding: 2.5vw 0vw;
+    padding: 1vw 0vw;
   }
   .hamburgerIcon {
     display: block;

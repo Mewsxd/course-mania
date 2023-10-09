@@ -59,7 +59,7 @@ textarea::placeholder {
 }
 @media (max-width: 500px) {
   .container textarea {
-    width: 90%;
+    width: 100%;
   }
   .textAreaContainer {
     margin-left: 0;

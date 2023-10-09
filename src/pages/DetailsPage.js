@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import vid from "../assets/vid.mp4";
 import thumb1 from "../assets/thumbnail1.svg";
@@ -18,24 +18,44 @@ import coursesData from "../data";
 import leftArrow from "../assets/Vector  (Stroke).svg";
 // import coursesData from "../data";
 const DetailsPage = () => {
-  const { courseId } = useParams();
+  const { courseId } = useParams(); // id of each particular playlist
   const course = coursesData.find((data) => data.id === courseId);
-  console.log(course);
-  const arr = [];
-  for (let i = 0; i < course.stars; i++) {
-    arr.push(
-      <span
-        style={{ marginRight: "0.5vw", fontSize: "3rem" }}
-        key={i}
-        // STARS CLASS IS IN Stars.css
-        className="fa fa-star checked stars"
-      ></span>
-    );
-  }
+  const [playListItemData, setPlayListItemData] = useState([]);
+  // const [playListItemIds, setPlayListItemIds] = useState([]);
+  const [videoIframes, setVideoIframes] = useState([]); // Stores all the iframe links of the playlist videos
+  useEffect(() => {
+    fetch(
+      `https://www.googleapis.com/youtube/v3/playlistItems?playlistId=${courseId}&part=snippet&maxResults=50&key=AIzaSyAKziylTfWS6CQcdrtez4TeNafZtKAeGFo`
+    )
+      .then((res) => res.json())
+      .then((data) => setPlayListItemData(data.items));
+  }, []);
+  // console.log(playListItemData);
   const navigate = useNavigate();
   function onBackClick() {
     navigate("..");
   }
+
+  useEffect(() => {
+    const data = playListItemData.map(
+      (item) => item?.snippet?.resourceId?.videoId
+    );
+    async function fetchVideoData() {
+      const req = await fetch(
+        `https://www.googleapis.com/youtube/v3/videos?key=AIzaSyAKziylTfWS6CQcdrtez4TeNafZtKAeGFo&part=player&id=${data}&maxWidth=1200`
+      );
+      const res = await req.json();
+      const urls = res?.items?.map((item) => {
+        return item?.player?.embedHtml;
+      });
+      setVideoIframes(urls);
+    }
+    fetchVideoData();
+  }, [playListItemData]);
+  const date = new Date(playListItemData[0]?.snippet?.publishedAt);
+  const day = date.getDate();
+  const month = date.getMonth();
+  const year = date.getFullYear();
   return (
     <div className={classes.mainContainer} style={{ textAlign: "center" }}>
       <div className={classes.detailsOuterContainer}>
@@ -47,72 +67,108 @@ const DetailsPage = () => {
             <img src={leftArrow} />
             <p className={classes.back}> Back</p>
           </div>
-          <h1 className={classes.title}>{course.title}</h1>
-          <ReactPlayer
+          <h1 className={classes.title}>
+            {playListItemData[0]?.snippet?.title}
+          </h1>
+          {/* <ReactPlayer
             style={{ margin: "0 auto" }}
             width="80vw"
             height="37vw"
             className={classes.videoFrame}
-            // className="react-player"
             url={vid}
             light={course.image}
             playing
             controls
             playIcon={<img src={playerIcon} style={{ width: "12%" }} />}
+          /> */}
+          {/* <iframe
+            width="100%"
+            height="600px"
+            src="https://www.youtube.com/embed/apzFDeBx3Ic?si=YLSkHgTq-Y8dLI-F"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe> */}
+          {/* <iframe
+            width="100%"
+            height="600px"
+            src="https://www.youtube.com/embed/videoseries?si=R4IwYd4Cm-vOD-nu&amp;list=PLyD1XCIRA3gSkjVojnOWF6x1F7s9Qa9x2"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe> */}
+          {/* <iframe>{videoIframes[0]}</iframe> */}
+          {/* {
+            typeof (
+              <iframe
+                width="100%"
+                height="600px"
+                src="https://www.youtube.com/embed/videoseries?si=R4IwYd4Cm-vOD-nu&amp;list=PLyD1XCIRA3gSkjVojnOWF6x1F7s9Qa9x2"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            )
+          }
+          {videoIframes[0]} */}
+          {/* {videoIframes[0]} */}
+          <div
+            className={classes.mainVideoFrame}
+            dangerouslySetInnerHTML={{ __html: videoIframes[0] }}
           />
           <section>
             <div className={classes.courseInfoBox}>
               <div className={classes.courseInfo}>
                 <BiUser className={classes.courseIcon} />
                 <p>
-                  Creator : <span>{course.creator}</span>
+                  Creator : <span>Naresh Jasotani</span>
                 </p>
               </div>
               <div className={classes.courseInfo}>
                 <FiUpload className={classes.courseIcon} />
                 <p>
-                  Uploaded on : <span>{course.uploadDate}</span>
+                  Uploaded on :{" "}
+                  <span>
+                    {day}/{month}/{year}
+                  </span>
                 </p>
               </div>
               <div className={classes.courseInfo}>
                 <BsClock className={classes.courseIcon} />
                 <p>
-                  Duration : <span>{course.duration}</span>
+                  Duration : <span>{course?.duration}</span>
                 </p>
               </div>
               <div className={classes.courseInfo}>
                 <TbWorld className={classes.courseIcon} />
                 <p>
-                  Language : <span>{course.language} </span>
+                  Language : <span>English </span>
                 </p>
               </div>
-              {course.free ? (
-                <p className={classes.free}>Free</p>
-              ) : (
-                <p
-                  className={classes.free}
-                  style={{ backgroundColor: "green" }}
-                >
-                  ${course.price}
-                </p>
-              )}
+              <p className={classes.free}>Free</p>
             </div>
             <button className={classes.enrollButton}>Enroll Now</button>
-            <div style={{ color: "gold" }} className={classes.rating}>
-              {/* STARS IS IN ARR */}
+            <div></div>
+            {/* <div style={{ color: "gold" }} className={classes.rating}>
               {arr}
               <p>({course.rating})</p>
-            </div>
+            </div> */}
           </section>
-          <DetailsSection />
-          <Lessons lessons={course.lessons} />
-          <WriteReview />
+          <DetailsSection details={playListItemData[0]?.snippet?.description} />
+          <Lessons
+            lessons={course?.lessons}
+            playListItemData={playListItemData}
+          />
         </div>
-        <img className={classes.logo} src={course.logo} />
+        <div className={classes.logo}>
+          Bharati DW
+          <br /> Consultancy
+        </div>
       </div>
     </div>
-
-    // </main>
   );
 };
 

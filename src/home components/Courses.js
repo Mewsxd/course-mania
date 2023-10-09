@@ -12,17 +12,17 @@ const Courses = (props) => {
   //     ></span>
   //   ));
 
-  const arr = [];
-  for (let i = 0; i < props.stars; i++) {
-    arr.push(
-      <span
-        style={{ marginRight: "0.5vw" }}
-        key={i}
-        // STARS CLASS IS IN Stars.css
-        className="fa fa-star checked stars"
-      ></span>
-    );
-  }
+  // const arr = [];
+  // for (let i = 0; i < props.stars; i++) {
+  //   arr.push(
+  //     <span
+  //       style={{ marginRight: "0.5vw" }}
+  //       key={i}
+  //       // STARS CLASS IS IN Stars.css
+  //       className="fa fa-star checked stars"
+  //     ></span>
+  //   );
+  // }
 
   // console.log(arr);
   return (
@@ -32,7 +32,8 @@ const Courses = (props) => {
         <div className={classes.innerContainer}>
           <p>{props.p1}</p>
           <p>{props.p2}</p>
-          {props.priceDescription ? (
+          <p>Free</p>
+          {/* {props.priceDescription ? (
             <p>
               <del>${props.price}</del>
               <span>
@@ -40,20 +41,21 @@ const Courses = (props) => {
               </span>
             </p>
           ) : (
-            <p style={{ color: "lightgreen" }}>${props.price}</p>
-          )}
+            <p style={{ color: "lightgreen" }}>{props.price}</p>
+          )} */}
           <img className={classes.logo} src={props.logo} />
-          <div style={{ color: "gold" }} className={classes.rating}>
-            {/* STARS IS IN ARR */}
+          {/* <div style={{ color: "gold" }} className={classes.rating}>
             {arr}
             <p>({props.reviewNumbers})</p>
-          </div>
+          </div> */}
           {props.type === "Enroll" ? (
             <button>{props.type} Now</button>
           ) : (
-            <button style={{ backgroundColor: "#178c8c", color: "white" }}>
-              {props.type} Now
-            </button>
+            <NavLink to={props.id}>
+              <button style={{ backgroundColor: "#178c8c", color: "white" }}>
+                {props.type}
+              </button>
+            </NavLink>
           )}
           <h3>{props.tag}</h3>
         </div>

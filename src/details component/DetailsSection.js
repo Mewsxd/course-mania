@@ -1,11 +1,11 @@
 import React from "react";
 import classes from "./DetailsSection.module.css";
-const DetailsSection = () => {
+const DetailsSection = (props) => {
   return (
     <div className={classes.container}>
       <p>Details</p>
       <p className={classes.tab}>
-        Lorem ipsum dolor sit amet. Nam provident provident sit autem
+        {/* Lorem ipsum dolor sit amet. Nam provident provident sit autem
         perferendis et error.Lorem ipsum dolor sit amet. Nam provident provident
         sit autem perferendis et error.Lorem ipsum dolor sit amet. Nam provident
         provident sit autem perferendis et error.Lorem ipsum dolor sit amet. Nam
@@ -16,7 +16,8 @@ const DetailsSection = () => {
         perferendis et error.Lorem ipsum dolor sit amet. Nam provident provident
         sit autem perferendis et error.Lorem ipsum dolor sit amet. Nam provident
         provident sit autem perferendis et error.Lorem ipsum dolor sit amet. Nam
-        provident provident sit autem perferendis et error.
+        provident provident sit autem perferendis et error. */}
+        {props.details}
       </p>
     </div>
   );
