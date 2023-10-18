@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import classes from "./CertificationCourses.module.css";
 import Courses from "./Courses";
-import certificationImage1 from "../assets/certification1.svg";
-import certificationImage2 from "../assets/certification2.svg";
-import certificationImage3 from "../assets/certification3.svg";
-import cloud from "../assets/cloud.png";
 import downwardarrow from "../assets/arrow2.svg";
 import youtube from "../assets/youtube.svg";
 const CertificationCourses = () => {
@@ -61,43 +57,6 @@ const CertificationCourses = () => {
             type="View Course"
           />
         ))}
-        {/* <Courses
-          id="course-4"
-          img={certificationImage1}
-          tag="Best Seller"
-          stars={4}
-          p1="Team Work"
-          p2="Duration : 25mins"
-          price="19.90"
-          priceDescription="*Free"
-          logo={youtube}
-          reviewNumbers="24,100"
-          type="Buy"
-        />
-        <Courses
-          id="course-5"
-          img={certificationImage2}
-          tag="Best Seller"
-          stars={5}
-          p1="Leadership Skills"
-          p2="Duration : 50mins"
-          price="18.90"
-          logo={youtube}
-          reviewNumbers="28,435"
-          type="Buy"
-        />
-        <Courses
-          id="course-6"
-          img={certificationImage3}
-          tag="Best Seller"
-          stars={5}
-          p1="Statistics"
-          p2="Duration : 1hour 12mins"
-          price="10.90"
-          logo={youtube}
-          reviewNumbers="12,434"
-          type="Buy"
-        /> */}
       </section>
     </div>
   );

@@ -22,11 +22,6 @@ function App() {
           "https://www.googleapis.com/youtube/v3/playlists?key=AIzaSyAKziylTfWS6CQcdrtez4TeNafZtKAeGFo&part=snippet&channelId=UCifWfwxTfOYYoczCWmIY8bA&maxResults=6"
         );
         const res = await req.json();
-        // console.log(res);
-        // const data = res?.items;
-
-        // const playList = data?.map((item) => item?.id);
-        // setPlayListIds(playList);
       } catch (error) {
         console.error("Error fetching playlists:", error);
       }
@@ -77,96 +72,6 @@ function App() {
       fetchVideoFrames();
     }
   }, [playListItemIds]);
-
-  // const fetchApi = async () => {
-  //   const req = await fetch(
-  //     "https://www.googleapis.com/youtube/v3/playlists?key=AIzaSyAKziylTfWS6CQcdrtez4TeNafZtKAeGFo&part=snippet&channelId=UCifWfwxTfOYYoczCWmIY8bA&maxResults=6"
-  //   );
-  //   const res = await req.json();
-  //   const data = res?.items;
-  //   const playList = data?.map((data) => data?.id);
-  //   setPlayListIds((item) => [...item, playList]);
-  //   console.log(playListIds);
-  // };
-  // // fetchApi();
-  // const fetchPlayListItems = async () => {
-  //   const req = await fetch(
-  //     `https://www.googleapis.com/youtube/v3/playlistItems?playlistId=${playListIds[0]}&part=snippet&maxResults=50&key=AIzaSyAKziylTfWS6CQcdrtez4TeNafZtKAeGFo`
-  //   );
-  //   const res = await req.json();
-  //   const data = res?.items?.map((item) => item?.snippet?.resourceId?.videoId);
-  //   // console.log(data
-  //   setPlayListItemIds(data);
-  //   console.log(playListItemIds);
-  // };
-  // // fetchPlayListItems();
-  // const fetchVideoFrames = async () => {
-  //   const req = await fetch(
-  //     `https://www.googleapis.com/youtube/v3/videos?key=AIzaSyAKziylTfWS6CQcdrtez4TeNafZtKAeGFo&part=player&id=${playListItemIds}`
-  //   );
-  //   const res = await req.json();
-  //   const data = res?.items?.map((item) => item.player.embedHtml);
-  //   console.log(data);
-  // };
-  // fetchApi();
-  // useEffect(() => {
-  //   fetchApi();
-  // fetchPlayListItems();
-  // fetchVideoFrames();
-  // const fetchApi = async () => {
-  //   const req = await fetch(
-  //     "https://www.googleapis.com/youtube/v3/playlists?key=AIzaSyAKziylTfWS6CQcdrtez4TeNafZtKAeGFo&part=snippet&channelId=UCifWfwxTfOYYoczCWmIY8bA&maxResults=6"
-  //   );
-  //   const res = await req.json();
-  //   const data = res?.items;
-  //   const playList = data?.map((data) => data?.id);
-  //   setPlayListIds((item) => [...item, playList]);
-  //   console.log(playListIds);
-  // };
-  // // fetchApi();
-  // const fetchPlayListItems = async () => {
-  //   const req = await fetch(
-  //     `https://www.googleapis.com/youtube/v3/playlistItems?playlistId=${playListIds[0]}&part=snippet&maxResults=50&key=AIzaSyAKziylTfWS6CQcdrtez4TeNafZtKAeGFo`
-  //   );
-  //   const res = await req.json();
-  //   const data = res?.items?.map(
-  //     (item) => item?.snippet?.resourceId?.videoId
-  //   );
-  //   // console.log(data
-  //   setPlayListItemIds(data);
-  //   setTimeout(() => {
-  //     console.log(playListItemIds);
-  //   }, 4000);
-  // };
-  // fetchPlayListItems();
-  // const fetchVideoFrames = async () => {
-  //   const req = await fetch(
-  //     `https://www.googleapis.com/youtube/v3/videos?key=AIzaSyAKziylTfWS6CQcdrtez4TeNafZtKAeGFo&part=player&id=${playListItemIds}`
-  //   );
-  //   const res = await req.json();
-  //   const data = res?.items?.map((item) => item.player.embedHtml);
-  //   console.log(data);
-  // };
-  // fetchApi();
-  // if (playListIds) {
-  //   fetchPlayListItems();
-  //   if (playListItemIds) {
-  //     fetchVideoFrames();
-  //   }
-  // }
-  // fetchVideoFrames();
-  // fetchApi().then(fetchPlayListItems()).then(fetchVideoFrames());
-  // }, [playListIds]);
-  // fetch(
-  //   "https://www.googleapis.com/youtube/v3/playlists?key=AIzaSyAKziylTfWS6CQcdrtez4TeNafZtKAeGFo&part=snippet&channelId=UCifWfwxTfOYYoczCWmIY8bA&maxResults=6"
-  // )
-  //   .then((res) => res.json())
-  //   .then((data) => console.log(data.items));
-  // fetch(
-  //   "https://www.googleapis.com/youtube/v3/videos?key=AIzaSyAKziylTfWS6CQcdrtez4TeNafZtKAeGFo&part=player&id=EcnjEKmhAFY"
-  // )
-  //   .then((res) => res.json())
-  //   .then((data) => console.log(data.items[0].player));
   const router = createBrowserRouter([
     {
       path: "/",
@@ -179,12 +84,7 @@ function App() {
       ],
     },
   ]);
-  return (
-    <RouterProvider router={router} />
-    // <div className="App">
-    //   <DetailsPage />
-    // </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

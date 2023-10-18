@@ -2,29 +2,7 @@ import React from "react";
 import classes from "./Courses.module.css";
 import "./Stars.css";
 import { Link, NavLink } from "react-router-dom";
-// import img1 from "../assets/pic1.svg";
 const Courses = (props) => {
-  //   const stars = Array.from({ length: 5 }).map((_, index) => (
-  //     <span
-  //       key={index}
-  //       style={{ color: "gold" }}
-  //       className="fa fa-star checked"
-  //     ></span>
-  //   ));
-
-  // const arr = [];
-  // for (let i = 0; i < props.stars; i++) {
-  //   arr.push(
-  //     <span
-  //       style={{ marginRight: "0.5vw" }}
-  //       key={i}
-  //       // STARS CLASS IS IN Stars.css
-  //       className="fa fa-star checked stars"
-  //     ></span>
-  //   );
-  // }
-
-  // console.log(arr);
   return (
     <main>
       <div className={classes.container}>
