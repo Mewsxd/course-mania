@@ -36,7 +36,7 @@ const Lessons = (props) => {
     );
     async function fetchVideoData() {
       const req = await fetch(
-        `https://www.googleapis.com/youtube/v3/videos?key=AIzaSyAKziylTfWS6CQcdrtez4TeNafZtKAeGFo&part=player&id=${data}&maxWidth=150`
+        `https://www.googleapis.com/youtube/v3/videos?key=AIzaSyAKziylTfWS6CQcdrtez4TeNafZtKAeGFo&part=player&id=${data}&maxWidth=200`
       );
       const res = await req.json();
       const urls = res?.items?.map((item) => {

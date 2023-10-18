@@ -154,7 +154,7 @@ h2:hover {
   }
   .container p:nth-child(2) {
     font-size: 4vw;
-    margin-top: 7vw;
+    margin-top: 5vw;
   }
   .container p:nth-child(3) {
     font-size: 4vw;
@@ -173,12 +173,16 @@ h2:hover {
   .container button {
     font-size: 5vw;
     padding: 3vw 0vw;
-    margin-top: 6vw;
+    margin-top: 0vw;
     margin-bottom: 3vw;
     border-radius: 1.2vw;
   }
   .container:hover {
     transform: scale(100%);
     transition: all ease-in 0.1s;
+  }
+  .logo {
+    margin: 0;
+    transform: translateX(-4vw);
   }
 }

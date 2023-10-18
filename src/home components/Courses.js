@@ -33,21 +33,7 @@ const Courses = (props) => {
           <p>{props.p1}</p>
           <p>{props.p2}</p>
           <p>Free</p>
-          {/* {props.priceDescription ? (
-            <p>
-              <del>${props.price}</del>
-              <span>
-                <i> {props.priceDescription}</i>
-              </span>
-            </p>
-          ) : (
-            <p style={{ color: "lightgreen" }}>{props.price}</p>
-          )} */}
           <img className={classes.logo} src={props.logo} />
-          {/* <div style={{ color: "gold" }} className={classes.rating}>
-            {arr}
-            <p>({props.reviewNumbers})</p>
-          </div> */}
           {props.type === "Enroll" ? (
             <button>{props.type} Now</button>
           ) : (
@@ -61,7 +47,6 @@ const Courses = (props) => {
         </div>
       </div>
       <div style={{ textAlign: "center" }}>
-        {/* <Link> */}
         <Link to={props.id}>
           <h2>View More Info</h2>
         </Link>
