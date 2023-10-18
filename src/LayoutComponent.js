@@ -8,7 +8,6 @@ const LayoutComponent = () => {
     <div>
       <Navbar />
       <Outlet />
-      {/* <Footer /> */}
     </div>
   );
 };
