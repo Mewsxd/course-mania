@@ -23,9 +23,7 @@ const PopularCourses = () => {
     };
 
     fetchData();
-  }, []); // Empty dependency array to run the effect only once when the component mounts
-  // const data = playListData.slice(0, 3);
-  // console.log(data);
+  }, []);
   console.log(playListData);
   return (
     <>
@@ -88,34 +86,3 @@ const PopularCourses = () => {
 };
 
 export default PopularCourses;
-{
-  /* <Courses
-              id={item.id}
-              img={
-                item?.snippet?.thumbnails?.standard?.url
-                  ? item?.snippet?.thumbnails?.standard?.url
-                  : item?.snippet?.thumbnails?.medium?.url
-              }
-              tag="Best Seller"
-              p1={item?.snippet?.title}
-              p2="Duration : 1hour 12mins"
-              logo={youtube}
-              type="View Course"
-            /> */
-}
-{
-  /* <Courses
-            id={item?.id}
-            img={
-              item?.snippet?.thumbnails?.medium?.url ||
-              item?.snippet?.thumbnails?.medium.url ||
-              item?.snippet?.thumbnails?.default?.url
-            }
-            tag="Best Seller"
-            p1={item?.snippet?.title}
-            p2="Duration : 1hour 12mins"
-            price="Free"
-            logo={youtube}
-            type="View Course"
-          /> */
-}

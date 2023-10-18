@@ -1,7 +1,3 @@
-/* main {
-  width: 80%;
-  margin: 0 auto;
-} */
 .outerContainer {
   width: 100%;
   position: relative;
@@ -11,8 +7,6 @@
   width: 80%;
   margin: 0 auto;
   font-family: Inter;
-  /* text-align: center; */
-  /* height: 120vh; */
 }
 
 .mainTitle {

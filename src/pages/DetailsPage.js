@@ -1,9 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
-import vid from "../assets/vid.mp4";
-import thumb1 from "../assets/thumbnail1.svg";
-import ReactPlayer from "react-player";
-import playerIcon from "../assets/play icon.svg";
 import classes from "./DetailsPage.module.css";
 import { BiUser } from "react-icons/bi";
 import { FiUpload } from "react-icons/fi";
@@ -12,16 +7,13 @@ import { TbWorld } from "react-icons/tb";
 import "../home components/Stars.css";
 import DetailsSection from "../details component/DetailsSection";
 import Lessons from "../details component/Lessons";
-import WriteReview from "../details component/WriteReview";
 import { useNavigate, useParams } from "react-router-dom";
 import coursesData from "../data";
 import leftArrow from "../assets/Vector  (Stroke).svg";
-// import coursesData from "../data";
 const DetailsPage = () => {
   const { courseId } = useParams(); // id of each particular playlist
   const course = coursesData.find((data) => data.id === courseId);
   const [playListItemData, setPlayListItemData] = useState([]);
-  // const [playListItemIds, setPlayListItemIds] = useState([]);
   const [videoIframes, setVideoIframes] = useState([]); // Stores all the iframe links of the playlist videos
   useEffect(() => {
     fetch(
@@ -30,7 +22,6 @@ const DetailsPage = () => {
       .then((res) => res.json())
       .then((data) => setPlayListItemData(data.items));
   }, []);
-  // console.log(playListItemData);
   const navigate = useNavigate();
   function onBackClick() {
     navigate("..");
@@ -70,51 +61,6 @@ const DetailsPage = () => {
           <h1 className={classes.title}>
             {playListItemData[0]?.snippet?.title}
           </h1>
-          {/* <ReactPlayer
-            style={{ margin: "0 auto" }}
-            width="80vw"
-            height="37vw"
-            className={classes.videoFrame}
-            url={vid}
-            light={course.image}
-            playing
-            controls
-            playIcon={<img src={playerIcon} style={{ width: "12%" }} />}
-          /> */}
-          {/* <iframe
-            width="100%"
-            height="600px"
-            src="https://www.youtube.com/embed/apzFDeBx3Ic?si=YLSkHgTq-Y8dLI-F"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe> */}
-          {/* <iframe
-            width="100%"
-            height="600px"
-            src="https://www.youtube.com/embed/videoseries?si=R4IwYd4Cm-vOD-nu&amp;list=PLyD1XCIRA3gSkjVojnOWF6x1F7s9Qa9x2"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe> */}
-          {/* <iframe>{videoIframes[0]}</iframe> */}
-          {/* {
-            typeof (
-              <iframe
-                width="100%"
-                height="600px"
-                src="https://www.youtube.com/embed/videoseries?si=R4IwYd4Cm-vOD-nu&amp;list=PLyD1XCIRA3gSkjVojnOWF6x1F7s9Qa9x2"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              ></iframe>
-            )
-          }
-          {videoIframes[0]} */}
-          {/* {videoIframes[0]} */}
           <div
             className={classes.mainVideoFrame}
             dangerouslySetInnerHTML={{ __html: videoIframes[0] }}
@@ -152,10 +98,6 @@ const DetailsPage = () => {
             </div>
             <button className={classes.enrollButton}>Enroll Now</button>
             <div></div>
-            {/* <div style={{ color: "gold" }} className={classes.rating}>
-              {arr}
-              <p>({course.rating})</p>
-            </div> */}
           </section>
           <DetailsSection details={playListItemData[0]?.snippet?.description} />
           <Lessons

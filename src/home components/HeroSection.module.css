@@ -62,9 +62,6 @@
   padding-right: 5.6rem;
   text-transform: lowercase;
   word-wrap: break-word;
-  /* left: 50%;
-  top: 10%;
-  transform: translate(-50%, -50%); */
 }
 ::placeholder {
   color: rgba(44, 117, 117, 0.5);
@@ -73,9 +70,6 @@
 }
 
 @media (max-width: 768px) {
-  /* .container {
-    height: 50vw;
-  } */
   .info {
     margin-top: 3vw;
   }
