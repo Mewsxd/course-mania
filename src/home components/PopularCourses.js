@@ -5,7 +5,6 @@ import downwardarrow from "../assets/arrow2.svg";
 import youtube from "../assets/youtube.svg";
 const PopularCourses = () => {
   const [playListData, setPlayListData] = useState([]);
-  const [playListItemIds, setPlayListItemIds] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {

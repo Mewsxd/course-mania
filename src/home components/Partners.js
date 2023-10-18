@@ -1,9 +1,5 @@
 import React from "react";
 import classes from "./Partners.module.css";
-import udemy1 from "../assets/udemy logo.png";
-import udemy2 from "../assets/udemy.png";
-import khan from "../assets/khan.png";
-import khanlogo from "../assets/khan logo.png";
 import coursera from "../assets/coursera.svg";
 import cloud from "../assets/cloud.svg";
 import udemy3 from "../assets/Udemy_Logo_3280x1712-scaled.jpg";

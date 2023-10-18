@@ -9,14 +9,12 @@
   margin-top: 10rem;
 }
 .info {
-  /* margin-top: 3rem; */
   margin-top: 1.5vw;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* gap: 2.5rem; */
   gap: 1.5vw;
 }
 .info p {
@@ -37,7 +35,6 @@
   padding: 1vw 2vw;
   background-color: #0e8585;
   color: white;
-  /* font-size: 2rem; */
   font-size: 1.35vw;
   font-family: Inter;
   font-weight: 700;
@@ -48,10 +45,7 @@
   z-index: 50;
   border: 2px solid #45cfcf;
   outline: none;
-  /* position: absolute; */
-  /* z-index: 50; */
   width: 55%;
-  /* color: black; */
   color: rgba(44, 117, 117, 0.5);
   border-radius: 1.5rem;
   font-size: 2.6rem;
@@ -74,13 +68,10 @@
     margin-top: 3vw;
   }
   .info p {
-    /* margin: 0; */
     width: 40%;
-    /* text-align: center; */
     font-size: 2.5vw;
   }
   .info button {
-    /* padding: 1.5rem 3rem; */
     padding: 2vw 4vw;
     border-radius: 1vw;
     font-size: 2.5vw;

@@ -29,7 +29,6 @@ const CertificationCourses = () => {
               <input type="checkbox" />
               <label>Paid </label>
             </div>
-            {/* <div> */}
             <p style={{ color: "black" }}>
               Sort:{" "}
               <span>
@@ -48,7 +47,6 @@ const CertificationCourses = () => {
             id={item.id}
             img={item?.snippet?.thumbnails?.standard?.url}
             tag="Best Seller"
-            // stars={5}
             p1={item?.snippet?.title}
             p2="Duration : 1hour 12mins"
             price="10.90"

@@ -1,10 +1,6 @@
-// import logo from './logo.svg';
-// import './App.css';
-
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import DetailsPage from "./pages/DetailsPage";
 import Home from "./pages/Home";
-// import Detail from "./details component/Detail";
 import LayoutComponent from "./LayoutComponent";
 import { useEffect, useState } from "react";
 import CoursesPage, { loader } from "./pages/CoursesPage";
