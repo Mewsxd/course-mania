@@ -41,70 +41,7 @@ const LayoutComponent = () => {
   //     })
   //     .catch((error) => console.error("Error fetching the image:", error));
   // }, []);
-  // console.log(base64Image);
-  // useEffect(() => {
-  //   const axios = require("axios");
-  //   const fs = require("fs");
-  //   const image = fs.readFileSync("YOUR_IMAGE.jpg", {
-  //     encoding: "base64",
-  //   });
-  //   axios({
-  //     method: "POST",
-  //     url: "https://classify.roboflow.com/fungal-disease-in-lettuce/1",
-  //     params: {
-  //       api_key: "9RkWsIpavDstX3vfZsyN",
-  //     },
-  //     data: image,
-  //     headers: {
-  //       "Content-Type": "application/x-www-form-urlencoded",
-  //     },
-  //   })
-  //     .then(function (response) {
-  //       console.log(response.data);
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error.message);
-  //     });
-  // }, [base64Image]);
-  // useEffect(() => {
-  //   const image = "https://i.postimg.cc/gJG1YtTd/lettuce.jpg";
-  //   fetch("https://classify.roboflow.com/fungal-disease-in-lettuce/1", {
-  //     method: "POST",
-  //     params: {
-  //       api_key: "9RkWsIpavDstX3vfZsyN",
-  //     },
-  //     headers: {
-  //       "Content-Type": "image/jpeg",
-  //     },
-  //     body: image,
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => console.log(data));
-  // const axios = require("axios");
-  // // const fs = require("fs");
 
-  // // const image = fs.readFileSync("YOUR_IMAGE.jpg", {
-  // //   encoding: "base64",
-  // // });
-  // const image = "https://i.postimg.cc/gJG1YtTd/lettuce.jpg";
-  // axios({
-  //   method: "POST",
-  //   url: "https://classify.roboflow.com/fungal-disease-in-lettuce/1",
-  //   params: {
-  //     api_key: "9RkWsIpavDstX3vfZsyN",
-  //   },
-  //   data: image,
-  //   headers: {
-  //     "Content-Type": "application/x-www-form-urlencoded",
-  //   },
-  // })
-  //   .then(function (response) {
-  //     console.log(response.data);
-  //   })
-  //   .catch(function (error) {
-  //     console.log(error.message);
-  //   });
-  // }, []);
   return (
     <div>
       <ScrollToTop />
