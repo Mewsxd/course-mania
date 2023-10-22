@@ -1,6 +1,3 @@
-// import logo from './logo.svg';
-// import './App.css';
-
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import DetailsPage from "./pages/DetailsPage";
 import Home from "./pages/Home";
@@ -72,6 +69,30 @@ function App() {
       fetchVideoFrames();
     }
   }, [playListItemIds]);
+
+  useEffect(() => {
+    const apiFetch = async () => {
+      const url =
+        "https://plant-classifier.p.rapidapi.com/plantclassifier/plantNames";
+      const options = {
+        method: "GET",
+        headers: {
+          "X-RapidAPI-Key":
+            "0173a24741msh96b83362ece6ed0p152485jsn9de054820b87",
+          "X-RapidAPI-Host": "plant-classifier.p.rapidapi.com",
+        },
+      };
+
+      try {
+        const response = await fetch(url, options);
+        const result = await response.text();
+        console.log(result);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    apiFetch();
+  }, []);
   const router = createBrowserRouter([
     {
       path: "/",
