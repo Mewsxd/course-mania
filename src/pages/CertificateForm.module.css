@@ -5,8 +5,9 @@
   width: 50%;
   margin: 15rem auto;
   display: inline-block;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   padding: 5rem;
+  box-shadow: 0px 0px 10px 4px rgba(124, 124, 124, 0.3);
 }
 .formContainer form {
   display: flex;
@@ -19,10 +20,13 @@
   outline: none;
   margin: 1rem 0rem;
   padding: 1.5rem;
-  font-size: 1.2vw;
+  font-size: 1vw;
+  font-family: "Montserrat";
   border-radius: 2.5px;
   background-color: #e3f0ff;
 }
 .formContainer label {
   text-align: left;
+  font-size: 1vw;
+  font-family: "Montserrat";
 }
