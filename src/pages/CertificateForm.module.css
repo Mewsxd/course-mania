@@ -1,0 +1,28 @@
+.wrapper {
+  text-align: center;
+}
+.container {
+  width: 50%;
+  margin: 15rem auto;
+  display: inline-block;
+  border: 1px solid black;
+  padding: 5rem;
+}
+.formContainer form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 80%;
+}
+.formContainer input {
+  border: none;
+  outline: none;
+  margin: 1rem 0rem;
+  padding: 1.5rem;
+  font-size: 1.2vw;
+  border-radius: 2.5px;
+  background-color: #e3f0ff;
+}
+.formContainer label {
+  text-align: left;
+}

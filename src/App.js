@@ -5,6 +5,8 @@ import Home from "./pages/Home";
 import LayoutComponent from "./LayoutComponent";
 import { useEffect, useState } from "react";
 import CoursesPage, { loader } from "./pages/CoursesPage";
+import CertificateForm from "./pages/CertificateForm";
+import FormComponent from "./components/FormComponent";
 // import CP from "./pages/CP";
 function App() {
   // "https://www.googleapis.com/youtube/v3/search?key=AIzaSyAKziylTfWS6CQcdrtez4TeNafZtKAeGFo&q=BharatiDWConsultancy&type=video&part=snippet"
@@ -102,6 +104,7 @@ function App() {
         { path: ":courseId", element: <DetailsPage /> },
         { path: "courses", element: <CoursesPage /> },
         { path: "courses/:courseId", element: <DetailsPage /> },
+        { path: "/formRegister", element: <CertificateForm /> },
       ],
     },
   ]);
