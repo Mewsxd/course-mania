@@ -33,6 +33,9 @@ const CertificateForm = () => {
             <label>Enter date of birth</label>
             <br />
             <input type="date" id="dob" name="dob" required />
+            <br />
+            <p>Enrolled Course: </p>
+            <textarea placeholder="Message to the tutor" rows={5} />
           </Form>
         </div>
       </div>
