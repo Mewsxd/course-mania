@@ -68,22 +68,6 @@ const Lessons = (props) => {
           </div>
         );
       })}
-      {/* <div className={classes.innerContainer}>
-        <p className={classes.lessonNumber}>
-          Lesson 1: <span className={classes.lessonTitle}>Lesson Title</span>
-        </p>
-        <div className={classes.videoContainer}>
-          <div
-            style={{ width: "20px" }}
-            dangerouslySetInnerHTML={{ __html: props.iframes }}
-          ></div>
-          <p className={classes.lessonDesc}>
-            Lorem ipsum dolor sit amet. Nam provident provident sit autem
-            perferendis et error.Lorem ipsum dolor sit amet. Nam provident
-            provident sit autem perferendis et error.
-          </p>
-        </div>
-      </div> */}
       {arr}
 
       {/* <p className={classes.readMore}>Read more</p> */}

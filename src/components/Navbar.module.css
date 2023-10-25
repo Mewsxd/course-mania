@@ -113,8 +113,6 @@ ul a.active {
   border-bottom: 4px solid #178c8c;
 }
 .responsiveNavbarContainer ul {
-  /* color: lightgreen;
-  font-size: 4rem; */
   list-style: none;
   padding-left: 1rem;
   font-family: Inter;
