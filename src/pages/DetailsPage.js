@@ -12,7 +12,7 @@ import coursesData from "../data";
 import leftArrow from "../assets/Vector  (Stroke).svg";
 const DetailsPage = () => {
   const { courseId } = useParams(); // id of each particular playlist
-  const course = coursesData.find((data) => data.id === courseId);
+  // const course = coursesData.find((data) => data.id === courseId);
   const [playListItemData, setPlayListItemData] = useState([]);
   const [videoIframes, setVideoIframes] = useState([]); // Stores all the iframe links of the playlist videos
   useEffect(() => {
@@ -43,6 +43,9 @@ const DetailsPage = () => {
     }
     fetchVideoData();
   }, [playListItemData]);
+  if (!playListItemData) {
+    return <p>Loading...</p>;
+  }
   const date = new Date(playListItemData[0]?.snippet?.publishedAt);
   const day = date.getDate();
   const month = date.getMonth();
@@ -85,7 +88,7 @@ const DetailsPage = () => {
               <div className={classes.courseInfo}>
                 <BsClock className={classes.courseIcon} />
                 <p>
-                  Duration : <span>{course?.duration}</span>
+                  Duration : <span>2hr 22mins</span>
                 </p>
               </div>
               <div className={classes.courseInfo}>
@@ -103,7 +106,7 @@ const DetailsPage = () => {
           </section>
           <DetailsSection details={playListItemData[0]?.snippet?.description} />
           <Lessons
-            lessons={course?.lessons}
+            // lessons={course?.lessons}
             playListItemData={playListItemData}
           />
         </div>

@@ -1,28 +1,28 @@
 import React, { useEffect, useState } from "react";
 import classes from "./Lessons.module.css";
 const Lessons = (props) => {
-  const arr = [];
-  for (let i = 1; i < props.lessons; i++) {
-    arr.push(
-      <div className={classes.innerContainer}>
-        <p className={classes.lessonNumber}>
-          Lesson {i}: <span className={classes.lessonTitle}>Lesson Title</span>
-        </p>
-        <p className={classes.lessonDesc}>
-          Lorem ipsum dolor sit amet. Nam provident provident sit autem
-          perferendis et error.Lorem ipsum dolor sit amet. Nam provident
-          provident sit autem perferendis et error.
-        </p>
-      </div>
-    );
-  }
+  // const arr = [];
+  // for (let i = 1; i < props.lessons; i++) {
+  //   arr.push(
+  //     <div className={classes.innerContainer}>
+  //       <p className={classes.lessonNumber}>
+  //         Lesson {i}: <span className={classes.lessonTitle}>Lesson Title</span>
+  //       </p>
+  //       <p className={classes.lessonDesc}>
+  //         Lorem ipsum dolor sit amet. Nam provident provident sit autem
+  //         perferendis et error.Lorem ipsum dolor sit amet. Nam provident
+  //         provident sit autem perferendis et error.
+  //       </p>
+  //     </div>
+  //   );
+  // }
   const [videoFrames, setVideoIframes] = useState([]); //Contains all the iframes of vidoes of a selected playlists
   const [videoData, setVideoData] = useState([]); // Contains general video data like title, descirption, etc with the help of part=snippet
   useEffect(() => {
     const data = props.playListItemData.map(
       (item) => item?.snippet?.resourceId?.videoId
     );
-    console.log(data);
+    // console.log(data);
     fetch(
       `https://www.googleapis.com/youtube/v3/videos?key=AIzaSyAKziylTfWS6CQcdrtez4TeNafZtKAeGFo&part=snippet&id=${data}`
     )
@@ -46,13 +46,13 @@ const Lessons = (props) => {
     }
     fetchVideoData();
   }, [props.playListItemData]);
-  console.log(videoData);
+  // console.log(videoData);
   return (
     <div className={classes.container}>
       <p className={classes.title}>Lessons</p>
       {videoFrames?.map((item, index) => {
         return (
-          <div className={classes.innerContainer}>
+          <div className={classes.innerContainer} key={index}>
             <p className={classes.lessonNumber}>
               Lesson {index + 1}:{" "}
               <span className={classes.lessonTitle}>
@@ -68,9 +68,8 @@ const Lessons = (props) => {
           </div>
         );
       })}
-      {arr}
     </div>
   );
 };
 
-export default Lessons;
+export default React.memo(Lessons);
