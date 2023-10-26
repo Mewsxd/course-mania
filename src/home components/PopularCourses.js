@@ -63,6 +63,7 @@ const PopularCourses = () => {
       <section className={classes.lower}>
         {data.map((item) => (
           <Courses
+            key={item.id}
             id={item.id}
             img={item.snippet.thumbnails.standard.url}
             tag="Best Seller"

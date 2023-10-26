@@ -12,7 +12,7 @@ const CertificationCourses = () => {
       .then((res) => res.json())
       .then((data) => setPlayListData(data.items.slice(-3)));
   }, []);
-  console.log(playListData);
+  // console.log(playListData);
   return (
     <div className={classes.outerContainer}>
       <div className={classes.upperContainer}>
@@ -45,6 +45,7 @@ const CertificationCourses = () => {
       <section className={classes.lower}>
         {playListData?.map((item) => (
           <Courses
+            key={item.id}
             id={item.id}
             img={item?.snippet?.thumbnails?.standard?.url}
             tag="Best Seller"

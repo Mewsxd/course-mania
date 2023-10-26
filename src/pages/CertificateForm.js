@@ -40,7 +40,7 @@ const CertificateForm = () => {
               id="courseName"
               name="courseName"
               value={`Enrolled Course: Biochemistry`}
-              readonly
+              readOnly
             ></input>
             <br />
             <label>Message to the tutor</label>
