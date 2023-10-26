@@ -1,13 +1,13 @@
 import React from "react";
 import classes from "./CertificateForm.module.css";
-import FormComponent from "../components/FormComponent";
 import { Form, redirect } from "react-router-dom";
 const CertificateForm = () => {
+  function formSubmitHandler() {}
   return (
     <div className={classes.wrapper}>
       <div className={classes.container}>
         <div className={classes.formContainer}>
-          <Form method="POST">
+          <Form method="POST" onSubmit={formSubmitHandler}>
             <input
               type="text"
               id="name"
@@ -61,14 +61,32 @@ const CertificateForm = () => {
 export default CertificateForm;
 export async function action({ request }) {
   const fData = await request.formData();
+  const sentence = fData.get("courseName");
+  const parts = sentence.split(":");
+  const wordsAfterColon = parts[1].trim();
   const data = {
     name: fData.get("name"),
     address: fData.get("address"),
     email: fData.get("email"),
     dob: fData.get("dob"),
-    courseName: fData.get("courseName"),
+    courseName: wordsAfterColon,
     message: fData.get("message"),
   };
   console.log(data);
-  return redirect("/");
+
+  const response = await fetch(
+    `https://course-mania-401010-default-rtdb.asia-southeast1.firebasedatabase.app/${wordsAfterColon}.json`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }
+  );
+  if (!response.ok) {
+    alert("Could not submit form due to error! ");
+    return response;
+  }
+  return response;
 }

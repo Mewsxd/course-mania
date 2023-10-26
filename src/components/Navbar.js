@@ -39,7 +39,7 @@ const Navbar = () => {
             >
               <li style={{ color: "#444444", fontSize: "1.5vw" }}>Courses</li>
             </NavLink>
-            <NavLink to="/">
+            <NavLink to="trial/22">
               <li style={{ color: "#444444", fontSize: "1.5vw" }}>Tutors</li>
             </NavLink>
             <NavLink to="/">

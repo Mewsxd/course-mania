@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 import CoursesPage, { loader } from "./pages/CoursesPage";
 import CertificateForm, { action } from "./pages/CertificateForm";
 import FormComponent from "./components/FormComponent";
+import { ErrorPage } from "./pages/ErrorPage";
+import Trial from "./pages/Trial";
 // import CP from "./pages/CP";
 function App() {
   // "https://www.googleapis.com/youtube/v3/search?key=AIzaSyAKziylTfWS6CQcdrtez4TeNafZtKAeGFo&q=BharatiDWConsultancy&type=video&part=snippet"
@@ -101,13 +103,49 @@ function App() {
       element: <LayoutComponent />,
       children: [
         { index: true, element: <Home /> },
-        { path: ":courseId", element: <DetailsPage /> },
+        {
+          path: ":courseId",
+          element: <DetailsPage />,
+        },
         { path: "courses", element: <CoursesPage /> },
-        { path: "courses/:courseId", element: <DetailsPage /> },
-        { path: "/formRegister", element: <CertificateForm />, action: action },
+        {
+          path: "courses/:courseId",
+          element: <DetailsPage />,
+        },
+
+        {
+          path: "/trial/:trial",
+          element: <Trial />,
+        },
+        {
+          path: "/certificateform/:formRegister",
+          element: <CertificateForm />,
+          action: action,
+        },
       ],
     },
   ]);
+  // const router = createBrowserRouter([
+  //   {
+  //     path: "/",
+  //     element: <LayoutComponent />,
+  //     children: [
+  //       { index: true, element: <Home /> },
+  //       {
+  //         path: ":courseId",
+  //         element: <DetailsPage />,
+  //         children: [
+  //           { path: "courses", element: <CoursesPage /> },
+  //           {
+  //             path: ":formRegister",
+  //             element: <CertificateForm />,
+  //             action: action,
+  //           },
+  //         ],
+  //       },
+  //     ],
+  //   },
+  // ]);
   return <RouterProvider router={router} />;
 }
 

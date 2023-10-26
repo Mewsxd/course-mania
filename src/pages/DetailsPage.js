@@ -7,7 +7,7 @@ import { TbWorld } from "react-icons/tb";
 import "../home components/Stars.css";
 import DetailsSection from "../details component/DetailsSection";
 import Lessons from "../details component/Lessons";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, NavLink, useNavigate, useParams } from "react-router-dom";
 import coursesData from "../data";
 import leftArrow from "../assets/Vector  (Stroke).svg";
 const DetailsPage = () => {
@@ -99,9 +99,13 @@ const DetailsPage = () => {
               </div>
               <p className={classes.free}>Free</p>
             </div>
-            <button className={classes.enrollButton}>
-              <Link to="/formRegister">Request for certification</Link>
-            </button>
+            <Link
+              to={`/certificateform/${playListItemData[0]?.snippet?.title}`}
+            >
+              <button className={classes.enrollButton}>
+                Request for certification
+              </button>
+            </Link>
             <div></div>
           </section>
           <DetailsSection details={playListItemData[0]?.snippet?.description} />

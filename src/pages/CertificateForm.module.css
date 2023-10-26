@@ -40,3 +40,14 @@ p {
   resize: none;
   margin: 1vw 0vw;
 }
+.formContainer button {
+  margin: 1vw auto;
+  width: 40%;
+  padding: 1vw;
+  border: none;
+  color: white;
+  background-color: #0d1b2a;
+  font-family: "Montserrat";
+  border-radius: 5px;
+  font-size: 1.5vw;
+}

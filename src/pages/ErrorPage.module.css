@@ -1,0 +1,13 @@
+.errorContainer {
+  display: inline-block;
+  margin: 10rem auto;
+  text-align: center;
+  width: 100%;
+}
+.errorContainer h1 {
+  font-size: 4rem;
+}
+.errorContainer p {
+  font-size: 2rem;
+  text-align: center;
+}
