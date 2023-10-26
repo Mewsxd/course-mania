@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./CertificateForm.module.css";
 import FormComponent from "../components/FormComponent";
-import { Form } from "react-router-dom";
+import { Form, redirect } from "react-router-dom";
 const CertificateForm = () => {
   return (
     <div className={classes.wrapper}>
@@ -34,8 +34,23 @@ const CertificateForm = () => {
             <br />
             <input type="date" id="dob" name="dob" required />
             <br />
-            <p>Enrolled Course: </p>
-            <textarea placeholder="Message to the tutor" rows={5} />
+            {/* <p>Enrolled Course: </p> */}
+            <input
+              type="text"
+              id="courseName"
+              name="courseName"
+              value={`Enrolled Course: Biochemistry`}
+              readonly
+            ></input>
+            <br />
+            <label>Message to the tutor</label>
+            <textarea
+              placeholder="Something you want to say..."
+              rows={5}
+              name="message"
+              id="message"
+            />
+            <button>Submit</button>
           </Form>
         </div>
       </div>
@@ -44,3 +59,16 @@ const CertificateForm = () => {
 };
 
 export default CertificateForm;
+export async function action({ request }) {
+  const fData = await request.formData();
+  const data = {
+    name: fData.get("name"),
+    address: fData.get("address"),
+    email: fData.get("email"),
+    dob: fData.get("dob"),
+    courseName: fData.get("courseName"),
+    message: fData.get("message"),
+  };
+  console.log(data);
+  return redirect("/");
+}

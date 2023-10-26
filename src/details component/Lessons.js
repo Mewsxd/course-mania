@@ -69,18 +69,6 @@ const Lessons = (props) => {
         );
       })}
       {arr}
-
-      {/* <p className={classes.readMore}>Read more</p> */}
-      {/* <div className={classes.innerContainer}>
-        <p className={classes.lessonNumber}>
-          Lesson 1: <span className={classes.lessonTitle}>Lesson Title</span>
-        </p>
-        <p className={classes.lessonDesc}>
-          Lorem ipsum dolor sit amet. Nam provident provident sit autem
-          perferendis et error.Lorem ipsum dolor sit amet. Nam provident
-          provident sit autem perferendis et error.
-        </p>
-      </div> */}
     </div>
   );
 };

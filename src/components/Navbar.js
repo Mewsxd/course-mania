@@ -8,7 +8,6 @@ const Navbar = () => {
   function hamburgerListener() {
     setShowHamburger(!showHamburger);
   }
-  console.log(showHamburger);
   return (
     <div className={classes.outerContainer}>
       <nav className={classes.container}>
