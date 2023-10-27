@@ -1,8 +1,38 @@
-import React from "react";
+import React, { useReducer } from "react";
 import classes from "./CertificateForm.module.css";
-import { Form, redirect } from "react-router-dom";
+import { Form, redirect, useNavigation, useParams } from "react-router-dom";
+const initStates = {
+  name: "",
+  address: "",
+  email: "",
+  dob: "",
+  message: "",
+};
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "name":
+      return { ...state, name: action.value };
+    case "address":
+      return { ...state, address: action.value };
+    case "email":
+      return { ...state, email: action.value };
+    case "dob":
+      return { ...state, dob: action.value };
+    case "message":
+      return { ...state, message: action.value };
+    case "reset":
+      return { name: "", address: "", email: "", dob: "", message: "" };
+  }
+};
 const CertificateForm = () => {
-  function formSubmitHandler() {}
+  const [state, dispatch] = useReducer(reducer, initStates);
+  const { formRegister } = useParams();
+  console.log(formRegister);
+  function formSubmitHandler() {
+    dispatch({ type: "reset" });
+  }
+  const navigation = useNavigation();
+  const isSubmitting = navigation.state === "submitting";
   return (
     <div className={classes.wrapper}>
       <div className={classes.container}>
@@ -12,6 +42,10 @@ const CertificateForm = () => {
               type="text"
               id="name"
               name="name"
+              value={state.name}
+              onChange={(e) =>
+                dispatch({ type: "name", value: e.target.value })
+              }
               placeholder="name"
               required
             />
@@ -19,6 +53,10 @@ const CertificateForm = () => {
               type="text"
               id="address"
               name="address"
+              value={state.address}
+              onChange={(e) =>
+                dispatch({ type: "address", value: e.target.value })
+              }
               placeholder="address"
               required
             />
@@ -26,20 +64,31 @@ const CertificateForm = () => {
               type="email"
               id="email"
               name="email"
+              value={state.email}
+              onChange={(e) =>
+                dispatch({ type: "email", value: e.target.value })
+              }
               placeholder="email"
               required
             />
             <br />
             <label>Enter date of birth</label>
             <br />
-            <input type="date" id="dob" name="dob" required />
+            <input
+              type="date"
+              id="dob"
+              name="dob"
+              value={state.dob}
+              onChange={(e) => dispatch({ type: "dob", value: e.target.value })}
+              required
+            />
             <br />
             {/* <p>Enrolled Course: </p> */}
             <input
               type="text"
               id="courseName"
               name="courseName"
-              value={`Enrolled Course: Biochemistry`}
+              value={`Enrolled Course: ${formRegister}`}
               readOnly
             ></input>
             <br />
@@ -47,10 +96,14 @@ const CertificateForm = () => {
             <textarea
               placeholder="Something you want to say..."
               rows={5}
+              value={state.message}
+              onChange={(e) =>
+                dispatch({ type: "message", value: e.target.value })
+              }
               name="message"
               id="message"
             />
-            <button>Submit</button>
+            <button>{isSubmitting ? "Submitting..." : "Submit"}</button>
           </Form>
         </div>
       </div>
@@ -88,5 +141,6 @@ export async function action({ request }) {
     alert("Could not submit form due to error! ");
     return response;
   }
-  return response;
+  alert("Your form has been submitted.");
+  return redirect("/");
 }

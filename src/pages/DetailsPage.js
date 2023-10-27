@@ -12,6 +12,7 @@ import coursesData from "../data";
 import leftArrow from "../assets/Vector  (Stroke).svg";
 const DetailsPage = () => {
   const { courseId } = useParams(); // id of each particular playlist
+
   // const course = coursesData.find((data) => data.id === courseId);
   const [playListItemData, setPlayListItemData] = useState([]);
   const [videoIframes, setVideoIframes] = useState([]); // Stores all the iframe links of the playlist videos
@@ -50,6 +51,16 @@ const DetailsPage = () => {
   const day = date.getDate();
   const month = date.getMonth();
   const year = date.getFullYear();
+  const originalString = playListItemData[0]?.snippet?.title;
+
+  // Replace forward slashes with hyphens
+  let modifiedCourseName = originalString?.replace(/\//g, "|");
+
+  // Replace backward slashes with hyphens
+  modifiedCourseName = modifiedCourseName?.replace(/\\/g, "|");
+
+  console.log(modifiedCourseName);
+
   return (
     <div className={classes.mainContainer} style={{ textAlign: "center" }}>
       <div className={classes.detailsOuterContainer}>
@@ -99,9 +110,7 @@ const DetailsPage = () => {
               </div>
               <p className={classes.free}>Free</p>
             </div>
-            <Link
-              to={`/certificateform/${playListItemData[0]?.snippet?.title}`}
-            >
+            <Link to={`/certificateform/${modifiedCourseName}`}>
               <button className={classes.enrollButton}>
                 Request for certification
               </button>

@@ -31,9 +31,9 @@
   color: #a19f9f;
   font-size: 1.4vw;
   font-weight: 500;
+  font-family: Inria Sans;
   /* line-height: 24px; */
   letter-spacing: 0em;
-  /* text-align: left; */
 }
 .mainContainer button {
   margin: 0 auto;
@@ -81,6 +81,7 @@
   line-height: 24px;
   letter-spacing: 0em;
   color: #868686;
+  text-align: center;
 }
 .role {
   font-family: Inter;
@@ -90,6 +91,7 @@
   letter-spacing: 0em;
   /* text-align: left; */
   color: #0a4a4a;
+  text-align: center;
 }
 .person p:nth-child(4) {
   font-family: Inter;
@@ -100,6 +102,7 @@
   /* text-align: left; */
   color: #0e8585;
   text-decoration: underline;
+  text-align: center;
 }
 
 /* THIS IS THE RATING NUMBERS CLASS */
@@ -115,6 +118,8 @@
   font-weight: 400;
   line-height: 17px;
   letter-spacing: 0em;
+  text-align: center;
+
   /* text-align: left; */
 }
 .plant {

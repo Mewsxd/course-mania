@@ -10,8 +10,7 @@
 }
 .mainContainer section {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
 }
 
 .detailsOuterContainer {
@@ -94,19 +93,20 @@
   font-size: 2.5rem;
 }
 .enrollButton {
-  width: 90%;
+  width: 34%;
   cursor: pointer;
   background-color: #009494;
   border: none;
   outline: none;
   color: white;
-  font-size: 3.6rem;
+  /* font-size: 3.6rem; */
+  /* font-size: 1.5vw; */
+  font-size: 2.25rem;
   font-family: Istok Web;
   font-weight: 700;
   text-transform: capitalize;
   word-wrap: break-word;
   padding: 0.8vw 0vw;
-  transform: translateX(-5vw);
   border-radius: 0.5rem;
 }
 .mainContainer button a {
@@ -151,11 +151,11 @@
   min-width: 20%;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 480px) {
   .mainContainer section {
-    flex-direction: column;
+    /* flex-direction: column;
     align-items: center;
-    gap: 7vw;
+    gap: 7vw; */
   }
   .courseInfoBox {
     width: 90%;
@@ -171,8 +171,8 @@
     align-items: center;
   }
   .enrollButton {
-    width: 70%;
-    transform: translateX(0vw);
+    width: 100%;
+    /* transform: translateX(0vw); */
   }
   .detailsInnerContainer .title {
     margin-top: 5vw;
