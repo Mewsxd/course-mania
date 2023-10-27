@@ -7,7 +7,6 @@ import { NavLink } from "react-router-dom";
 import Footer from "../components/Footer";
 const PopularCourses = () => {
   const [playListData, setPlayListData] = useState([]);
-  // const [playListItemIds, setPlayListItemIds] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {

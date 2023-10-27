@@ -1,21 +1,6 @@
 import React, { useEffect, useState } from "react";
 import classes from "./Lessons.module.css";
 const Lessons = (props) => {
-  // const arr = [];
-  // for (let i = 1; i < props.lessons; i++) {
-  //   arr.push(
-  //     <div className={classes.innerContainer}>
-  //       <p className={classes.lessonNumber}>
-  //         Lesson {i}: <span className={classes.lessonTitle}>Lesson Title</span>
-  //       </p>
-  //       <p className={classes.lessonDesc}>
-  //         Lorem ipsum dolor sit amet. Nam provident provident sit autem
-  //         perferendis et error.Lorem ipsum dolor sit amet. Nam provident
-  //         provident sit autem perferendis et error.
-  //       </p>
-  //     </div>
-  //   );
-  // }
   const [videoFrames, setVideoIframes] = useState([]); //Contains all the iframes of vidoes of a selected playlists
   const [videoData, setVideoData] = useState([]); // Contains general video data like title, descirption, etc with the help of part=snippet
   useEffect(() => {
@@ -46,7 +31,6 @@ const Lessons = (props) => {
     }
     fetchVideoData();
   }, [props.playListItemData]);
-  // console.log(videoData);
   return (
     <div className={classes.container}>
       <p className={classes.title}>Lessons</p>
