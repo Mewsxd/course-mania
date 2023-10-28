@@ -116,7 +116,7 @@ section {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 480px) {
   .upperLeft {
     width: 100%;
   }
@@ -141,8 +141,9 @@ section {
     flex-direction: column;
   }
   .filterRight {
-    width: 90%;
+    width: 100%;
     justify-content: space-between;
+    align-items: end;
   }
   .upperRight {
     font-size: 3.2vw;
@@ -161,5 +162,9 @@ section {
   }
   .downwardArrow img {
     width: 3.5vw;
+  }
+  .checkbox {
+    flex-direction: column;
+    align-items: start;
   }
 }

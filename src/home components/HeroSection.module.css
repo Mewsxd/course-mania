@@ -1,5 +1,5 @@
 .container {
-  height: 38vw;
+  height: 40vw;
   display: inline-block;
   background-image: url("../assets/back_upscaled.png");
   background-position: center center;
@@ -70,14 +70,18 @@
 }
 
 @media (max-width: 768px) {
+  .container {
+    margin-top: 13rem;
+    height: 45vw;
+  }
   .info {
     margin-top: 3vw;
   }
   .info p {
     /* margin: 0; */
-    width: 40%;
+    width: 50%;
     /* text-align: center; */
-    font-size: 2.5vw;
+    font-size: 3vw;
   }
   .info button {
     /* padding: 1.5rem 3rem; */

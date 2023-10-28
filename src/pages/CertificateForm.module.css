@@ -90,7 +90,7 @@ p {
     font-size: 4vw;
     padding: 2rem;
   }
-  .formContainer label,
+  .formContainer form label,
   p {
     font-size: 4vw;
   }
