@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import classes from "./PopularCourses.module.css";
 import Courses from "./Courses";
 import downwardarrow from "../assets/arrow2.svg";
 import youtube from "../assets/youtube.svg";
 const PopularCourses = () => {
+  const ref = useRef();
   const [playListData, setPlayListData] = useState([]);
   const [playListItemIds, setPlayListItemIds] = useState([]);
   useEffect(() => {
