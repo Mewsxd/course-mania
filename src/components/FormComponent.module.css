@@ -1,6 +1,4 @@
 .formContainer {
-  /* width: 70%; */
-  /* padding: 4vw; */
   border-radius: 10px;
   background-color: white;
   margin: auto;
@@ -8,9 +6,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25); */
   border: 2px solid black;
-  /* text-align: center; */
 }
 .formContainer label {
   text-align: left;

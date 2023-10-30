@@ -83,7 +83,6 @@ const CertificateForm = () => {
               required
             />
             <br />
-            {/* <p>Enrolled Course: </p> */}
             <input
               type="text"
               id="courseName"
