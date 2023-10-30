@@ -12,15 +12,6 @@
   border: 2px solid black;
   /* text-align: center; */
 }
-.formContainer form {
-  /* text-align: center; */
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 0 auto; */
-}
 .formContainer label {
   text-align: left;
 }
